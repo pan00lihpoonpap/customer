@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点餐界面</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+    <!--顶栏-->
+    <header>
+        <a href="#" class="logo"><i class="fas-fa-untensils"></i>鸡蛋食堂</a>
+        <nav class="navbar">
+            <a class="active" href="#home">首页</a>
+            <a href="#dishes">菜单</a>
+            <a href="#about">关于</a>
+            <a href="#review">评价</a>
+            <a href="http://127.0.0.1:5500/html/indent.html">历史订单</a>
+            <a href="http://127.0.0.1:5500/html/log.html" id="loginLink">登录/注册</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <!--<a href="#" class="fas fa-users"></a>-->
+            <a href="http://127.0.0.1:5500/html/heart.html" class="fas fa-heart"></a>
+            <a href="http://127.0.0.1:5500/html/cart.html" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+    <!--搜索功能-->
+    <form action="" id="search-form">
+        <input type="search" placeholder="搜索" name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!--首页-->
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>傍晚六折</span>
+                        <h3>白切鸡</h3>
+                        <p>自养走地鸡，肥嫩鲜美，鸡肉鲜嫩紧实微甜</p>
+                        <a href="#dishes" class="btn">现在订购</a>
+                    </div>
+                    <div class="image">
+                        <img src="../pic/白切鸡.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>今日特供</span>
+                        <h3>深井烧鹅</h3>
+                        <p>正宗深井烧鹅，外脆里嫩，鲜香可口</p>
+                        <a href="#dishes" class="btn">现在订购</a>
+                    </div>
+                    <div class="image">
+                        <img src="../pic/深井烧鹅.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>热销菜品</span>
+                        <h3>菠萝咕噜肉</h3>
+                        <p>选用猪瘦肉，加入鸡蛋，菠萝肉，番茄酱制作而成，酸甜，微辣，软糯好吃</p>
+                        <a href="#dishes" class="btn">现在订购</a>
+                    </div>
+                    <div class="image">
+                        <img src="../pic/菠萝咕噜肉.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!--菜单-->
+    <section class="dishes" id="dishes">
+        <h1 class="heading">菜单</h1>
+        <div class="box-container">
+            <!-- 模态框结构 -->
+            <div id="myModal" class="modal">
+                <i class="fas fa-times" id="close"></i>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('白切鸡.jpg', event)"></a>
+                <img src="../pic/白切鸡.jpg" alt="菜品" id="item1-image">
+                <h3 id="item1-name">白切鸡</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item1-price">￥35.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('菠萝咕噜肉.jpg', event)"></a>
+                <img src="../pic/菠萝咕噜肉.jpg" alt="菜品" id="item2-image">
+                <h3 id="item2-name">菠萝咕噜肉</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span id="item2-price">￥25.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('脆皮烧肉.jpeg', event)"></a>
+                <img src="../pic/脆皮烧肉.jpeg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">脆皮烧肉</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item3-price">￥30.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('干炒牛河.jpg', event)"></a>
+                <img src="../pic/干炒牛河.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">干炒牛河</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item3-price">￥15.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('红烧乳鸽.jpg', event)"></a>
+                <img src="../pic/红烧乳鸽.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">红烧乳鸽</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span id="item3-price">￥25.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div> 
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('烤乳猪.jpg', event)"></a>
+                <img src="../pic/烤乳猪.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">烤乳猪</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item3-price">￥50.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('蜜汁叉烧.jpg', event)"></a>
+                <img src="../pic/蜜汁叉烧.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">蜜汁叉烧</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item3-price">￥25.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('深井烧鹅.jpg', event)"></a>
+                <img src="../pic/深井烧鹅.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">深井烧鹅</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span id="item3-price">￥75.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#dishes" class="fas fa-eye" onclick="showModal('蒜香骨.jpg', event)"></a>
+                <img src="../pic/蒜香骨.jpg" alt="菜品" id="item3-image">
+                <h3 id="item3-name">蒜香骨</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span id="item3-price">￥20.00</span>
+                <!--<a href="#" class="btn">添加</a>-->
+                <button href="#" class="btn" id="add-to-cart">添加</button>
+            </div>
+        </div>
+    </section>
+    <!--关于我们-->
+    <section class="about" id="about">
+        <h3 class="sub-heading">关于我们</h3>
+        <h1 class="heading">为什么选择我们？</h1>
+        <div class="row">
+            <div class="image">
+                <img src="../pic/菠萝咕噜肉.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>最好的食材</h3>
+                <p>我们的厨师团队致力于挑选最新鲜的食材，创造出既传统又创新的菜品满足每位顾客的味蕾</p>
+                <p>美食不仅仅是滋养身体，更是一种艺术，一种文化的传承</p>
+                <p>在这里，每一道菜都讲述着一个故事，每一口食物都是对品质的承诺</p>
+                <p>无论是家庭聚餐还是商务宴请，我们都将确保您的每次用餐都是一次特别的体验</p>
+                <p>我们期待着您的光临，让我们用心服务，为您创造美好回忆</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>免配送费用</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>支持移动支付</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-headset"></i>
+                        <span>24小时客服</span>
+                    </div>
+                </div>
+                <a href="#" class="btn">更多了解</a>
+            </div>
+        </div>
+    </section>
+    <!--评价-->
+    <section class="review" id="review">
+        <h3 class="sub-heading">顾客留言</h3>
+        <h1 class="heading">看看他们怎么说</h1>
+        <div class="swiper-container review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="../pic/head1.jpg" alt="">
+                        <div class="user-info">
+                            <h3>评分</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>这里的鸡有鸡味</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="../pic/head2.jpg" alt="">
+                        <div class="user-info">
+                            <h3>评分</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>上一条评论说得对</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="../pic/head3.jpg" alt="">
+                        <div class="user-info">
+                            <h3>评分</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>下次还来</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="../pic/head4.jpg" alt="">
+                        <div class="user-info">
+                            <h3>评分</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>勉为其难给个五星好评吧</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="../pic/head5.jpg" alt="">
+                        <div class="user-info">
+                            <h3>评分</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>烧鹅能不能便宜点</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--页脚部分-->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>店铺地址</h3>
+                <a href="#">北京</a>
+                <a href="#">上海</a>
+                <a href="#">广州</a>
+                <a href="#">深圳</a>
+                <a href="#">西安</a>
+            </div>
+            <div class="box">
+                <h3>链接</h3>
+                <a href="#">首页</a>
+                <a href="#">菜单</a>
+                <a href="#">关于</a>
+                <a href="#">评价</a>
+            </div>
+            <div class="box">
+                <h3>联系方式</h3>
+                <a href="#">020-8888-8888</a>
+                <a href="#">020-7888-8888</a>
+                <a href="#">020-6888-8888</a>
+                <a href="#">ankjsn@163.com</a>
+                <a href="#">oidjknsbb@163.com</a>
+            </div>
+            <div class="box">
+                <h3>关注我们</h3>
+                <a href="#">微信公众号</a>
+                <a href="#">微博</a>
+                <a href="#">抖音</a>
+                <a href="#">哔哩哔哩</a>
+            </div>
+        </div>
+        <div class="credit">copyright @ 2024 by <span>Peter Poon</span></div>
+    </section>
+    <!--加载效果-->
+    <div class="loader-container">
+        <img src="../pic/loader.gif" alt="">
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/order.js"></script>
+</body>
+</html>

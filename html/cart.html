@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas-fa-untensils"></i>鸡蛋食堂</a>
+        <h1>购物车</h1>
+        <nav class="navbar">
+            <a href="http://127.0.0.1:5500/html/order.html">继续点餐</a>
+        </nav>
+    </header>
+    
+    <!-- 添加一个主内容区域，用于包含菜品列表 -->
+    <main class="content">
+        <form action="#" method="post">
+            <section>
+                <!-- 菜品列表 -->
+                <!-- 购物车页面的HTML结构 -->
+                <div id="cart">
+                    <!-- 这里将显示购物车中的菜品 -->
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <!-- 将summary-container移出form元素，使其固定在底部 -->
+    <div class="summary-container" id="summary-container">
+        <p class="sub" id="summary">已选 <span id="item-count">0</span> 件商品，共计 <span id="total-price">0</span> 元</p>
+        <!-- 修改按钮类型为submit，并将其放入一个单独的form中 -->
+        <form action="#" method="post">
+            <button class="btn" id="checkout-button" type="submit">提交订单</button>
+        </form>
+        <button class="btn" id="clear-cart-button" type="button">清空购物车</button>
+    </div>
+    
+    <script src="../js/cart.js"></script>
+</body>
+</html>

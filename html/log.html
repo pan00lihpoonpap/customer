@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <link rel="stylesheet" href="../css/log.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-form container-signup" id="signup-container">
+            <form action="#" class="form" id="form1">
+                <h2 class="form-title">注册账号</h2>
+                <input type="text" placeholder="用户" class="input"/>
+                <input type="email" placeholder="邮箱" class="input"/>
+                <input type="password" placeholder="密码" class="input"/>
+            </form>
+            <form action="#" class="form1" id="form2">
+                <div class="btn-container">
+                    <input type="text" placeholder="验证码" class="input1" id="verification-code-input" />
+                    <button class="verification-code-btn" id="send-verification-code-btn">发送验证码</button>
+                </div>
+            </form>
+            <form action="#" class="form3" id="form4">
+                <button class="btn register-btn">点击注册</button>
+            </form>
+            <p id="countdown"></p>
+        </div>
+
+        <div class="container-form container-signin hidden" id="signin-container">
+            <form action="#" class="form2" id="form3">
+                <h2 class="form-title">欢迎登录</h2>
+                <input type="email" placeholder="邮箱" class="input"/>
+                <input type="password" placeholder="密码" class="input"/>
+                <a href="http://127.0.0.1:5500/html/findpwd.html" class="link">忘记密码?</a>
+                <button type="submit" class="btn">登录</button>
+            </form>
+        </div>
+
+        <div class="container-overlay">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <button class="btn" id="signin">
+                        已有账号，直接登录
+                    </button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <button class="btn" id="signup">
+                        没有账号，点击注册
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/log.js"></script>
+</body>
+</html>
